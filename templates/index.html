@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chord Progression Transposer</title>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      text-align: center;
+      min-height: 85vh; 
+      justify-content: center;
+      font-family: 'Courier New', monospace; 
+      font-size: 24px; 
+      color: #26262c; 
+      font-weight: bold;
+      background-color: #faf9f9; 
+    }
+    .content {
+        background-color: #7dace4; 
+        border-radius: 15px; 
+        padding: 20px; 
+        width: 900px; 
+        margin: 0 auto;
+        font-weight: bold;
+    }
+    .result-container {
+      margin-top: 20px;
+      min-height: 150px; 
+      background-color: #abedd8; 
+      padding: 20px; 
+      width: 900px; 
+      margin: 0 auto;
+      font-size: 24px; 
+      border-radius: 15px;
+    }
+
+    .btn_up, .btn_down {
+      background: #65afff;
+      padding: 10px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-weight: 900;
+      font-size: 18px;
+      
+      
+      
+}
+
+.btn_up:hover, .btn_down:hover {
+  background: #007bff;
+  color: white;
+}
+
+input {
+      background: #9dc9f7;
+      padding: 10px 20px;
+      font-size: 32px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-weight: bold;
+      font-size: 24px; 
+      color: #26262c;
+      text-align: center;
+    
+}
+
+.step{
+    width: 25px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <form method="post">
+      <h2>Chord Progression</h2>
+      <input type="text" name="chord_input" value="{{ chord_input }}" required>
+      <br><br><br>
+      <span class="text">Transpose    </span>
+      <input type="text" name="step_input" class = "step" value="{{ step_input }}" required>
+      <span class="text">   half steps  </span>
+      <br><br>
+      <input type="submit" class="btn_up" name="value" value="Up">
+      <input type="submit" class="btn_down" name="value" value="Down">
+    </form>
+  </div>
+  <div class="result-container">
+    {% if result %}
+      <h1>{{ result }}</h1>
+    {% endif %}
+  </div>
+</body>
+</html>

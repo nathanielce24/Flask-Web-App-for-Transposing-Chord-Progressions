@@ -4,6 +4,6 @@
 
 Built using flask for the backend, and HTML and CSS for the front-end.
 ##
- ![alt text](https://github.com/nathanielce24/Flask-Web-App-for-Transposing-Chord-Progressions/blob/main/src/static/screenshot.png)
+ ![alt text](https://github.com/nathanielce24/Flask-Web-App-for-Transposing-Chord-Progressions/blob/main/src/static/screenshot1.png)
 
  

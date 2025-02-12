@@ -27,6 +27,7 @@
         width: 900px; 
         margin: 0 auto;
         font-weight: bold;
+        border: 4px;
     }
     .result-container {
       margin-top: 20px;
@@ -95,6 +96,12 @@ input {
   <div class="result-container">
     {% if result %}
       <h1>{{ result }}</h1>
+    {% endif %}
+  </div>
+
+  <div class="key-container">
+    {% if key %}
+      <h1>{{ key }}</h1>
     {% endif %}
   </div>
 </body>

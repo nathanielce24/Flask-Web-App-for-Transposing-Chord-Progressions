@@ -84,6 +84,9 @@ input {
     <form method="post">
       <h2>Chord Progression</h2>
       <input type="text" name="chord_input" value="{{ chord_input }}" required>
+      {% if key %}
+          <h2>Key: {{ key }}</h2>
+      {% endif %}
       <br><br><br>
       <span class="text">Transpose    </span>
       <input type="text" name="step_input" class = "step" value="{{ step_input }}" required>
@@ -97,11 +100,8 @@ input {
     {% if result %}
       <h1>{{ result }}</h1>
     {% endif %}
-  </div>
-
-  <div class="key-container">
-    {% if key %}
-      <h1>{{ key }}</h1>
+    {% if new_key %}
+          <h2>New Key: {{ new_key }}</h2>
     {% endif %}
   </div>
 </body>

@@ -11,6 +11,7 @@ def index():
     last_value = ""
     result = ""
     key = ""
+    new_key = ""
     if request.method == "POST":
         chord_input = request.form["chord_input"]
         step_input = request.form["step_input"]
@@ -19,6 +20,7 @@ def index():
         try:
             key = transpose.findKey(chord_input)
             result = transpose.transposeChords(chord_input, direction_value, int(step_input))# Call the main function'
+            new_key = transpose.nextKey(key, direction_value, int(step_input))
 
         except:
             result = "Invalid Input"
@@ -28,7 +30,8 @@ def index():
                            result=result, 
                            chord_input=chord_input, 
                            step_input=step_input,
-                           key = key)
+                           key = key,
+                           new_key = new_key)
 
 if __name__ == "__main__":
     app.run(debug=True)

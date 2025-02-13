@@ -12,7 +12,7 @@
       align-items: center;
       margin: 0;
       text-align: center;
-      min-height: 85vh; 
+      min-height: 95vh; 
       justify-content: center;
       font-family: 'Courier New', monospace; 
       font-size: 24px; 
@@ -33,7 +33,7 @@
 
     .result-container {
       margin-top: 20px;
-      min-height: 150px; 
+      min-height: 250px; 
       background-color: #abedd8; 
       padding: 20px; 
       width: 900px; 
@@ -79,6 +79,10 @@ input {
     width: 25px;
 }
 
+.key-container, .nash_nums-container {
+    min-height: 80px; /* Ensure it has space even when empty */
+    margin: 0px; 
+}
   </style>
 </head>
 <body>
@@ -86,11 +90,6 @@ input {
     <form method="post">
       <h2>Chord Progression</h2>
       <input type="text" name="chord_input" value="{{ chord_input }}" required>
-      <div class="key-container">
-        {% if key %}
-          <h2>Key: {{ key }}</h2>
-        {% endif %}
-      </div>
       <br><br><br>
       <span class="text">Transpose    </span>
       <input type="text" name="step_input" class = "step" value="{{ step_input }}" required>
@@ -99,6 +98,16 @@ input {
       <input type="submit" class="btn_up" name="value" value="Up">
       <input type="submit" class="btn_down" name="value" value="Down">
     </form>
+    <div class="key-container">
+      {% if key %}
+        <h2>Key of {{ key }}</h2>
+      {% endif %}
+    </div>
+    <div class="nash_nums-container">
+      {% if key %}
+        <h2>{{ nash_nums }}</h2>
+      {% endif %}
+    </div>
   </div>
   <div class="result-container">
     {% if result %}

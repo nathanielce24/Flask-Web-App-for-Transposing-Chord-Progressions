@@ -14,6 +14,7 @@ def index():
     result = ""
     key = ""
     new_key = ""
+    nash_nums = ''
     if request.method == "POST":
         chord_input = request.form["chord_input"]
         step_input = request.form["step_input"]
@@ -21,8 +22,11 @@ def index():
         
         try:
             key = findkey.findKey(chord_input)
+            nash_nums = nashnums.toNashNums(chord_input)
             result = transpose.transposeChords(chord_input, direction_value, int(step_input))# Call the main function'
             new_key = transpose.nextKey(key, direction_value, int(step_input))
+            new_nash_nums = nashnums.toNashNums(chord_input)
+
 
         except:
             result = "Invalid Input"
@@ -33,7 +37,8 @@ def index():
                            chord_input=chord_input, 
                            step_input=step_input,
                            key = key,
-                           new_key = new_key)
+                           new_key = new_key,
+                           nash_nums=nash_nums)
 
 if __name__ == "__main__":
     app.run(debug=True)

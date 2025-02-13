@@ -28,7 +28,9 @@
         margin: 0 auto;
         font-weight: bold;
         border: 4px;
+        text-align: center;
     }
+
     .result-container {
       margin-top: 20px;
       min-height: 150px; 
@@ -84,9 +86,11 @@ input {
     <form method="post">
       <h2>Chord Progression</h2>
       <input type="text" name="chord_input" value="{{ chord_input }}" required>
-      {% if key %}
+      <div class="key-container">
+        {% if key %}
           <h2>Key: {{ key }}</h2>
-      {% endif %}
+        {% endif %}
+      </div>
       <br><br><br>
       <span class="text">Transpose    </span>
       <input type="text" name="step_input" class = "step" value="{{ step_input }}" required>
@@ -101,7 +105,7 @@ input {
       <h1>{{ result }}</h1>
     {% endif %}
     {% if new_key %}
-          <h2>New Key: {{ new_key }}</h2>
+          <h2>Key: {{ new_key }}</h2>
     {% endif %}
   </div>
 </body>

@@ -1,4 +1,4 @@
-from findkey import isMinor, isSharp, isFlat, findKey, getSharpMinor
+from findkey import *
 
 sharps = ["G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#"]
 flats = ["G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb"]

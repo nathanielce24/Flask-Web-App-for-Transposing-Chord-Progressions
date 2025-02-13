@@ -1,6 +1,8 @@
 import flask
 from flask import Flask, request, render_template
 import transpose
+import findkey
+import nashnums 
 
 app = Flask(__name__)
 
@@ -18,7 +20,7 @@ def index():
         direction_value = request.form.get('value')
         
         try:
-            key = transpose.findKey(chord_input)
+            key = findkey.findKey(chord_input)
             result = transpose.transposeChords(chord_input, direction_value, int(step_input))# Call the main function'
             new_key = transpose.nextKey(key, direction_value, int(step_input))
 
